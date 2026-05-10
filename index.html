@@ -22,13 +22,28 @@
 <!-- Favicon -->
 <link rel="icon" href="https://ikegawa-clinic.com/favicon.ico">
 
-<!-- GA4（既存サイトと同じ測定ID） -->
+<!-- GA4（既存サイトと同じ測定ID／予約システムとクロスドメイン連携） -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-CBFES87GQQ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-  gtag('config', 'G-CBFES87GQQ');
+  gtag('config', 'G-CBFES87GQQ', {
+    linker: { domains: ['reserve.ikegawa-clinic.com', 'mounjaro.ikegawa-clinic.com'] }
+  });
+  // 【2026-05-10 追加】予約 CTA・LINE CTA のクリックを計測
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('a[href*="reserve.ikegawa-clinic.com"]').forEach(function(a){
+      a.addEventListener('click', function(){
+        gtag('event', 'click_reserve_cta', { event_category: 'cta', event_label: a.textContent.trim().slice(0,40) });
+      });
+    });
+    document.querySelectorAll('a[href*="lin.ee/"]').forEach(function(a){
+      a.addEventListener('click', function(){
+        gtag('event', 'click_line_cta', { event_category: 'cta', event_label: a.textContent.trim().slice(0,40) });
+      });
+    });
+  });
 </script>
 
 <!-- 構造化データ：MedicalBusiness + WebPage -->
