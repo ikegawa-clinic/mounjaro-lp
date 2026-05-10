@@ -206,10 +206,50 @@
   .ikw-bio-card .ikw-bio-cap { font-size: 13px; color: #555; line-height: 1.6; margin: 0; }
   .ikw-bio-source { font-size: 11.5px; color: #888; margin: 8px 0 24px; line-height: 1.7; }
 
+  /* 信頼バッジ（hero 直下）*/
+  .ikw-trust-badges { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin: 18px 0 22px; }
+  .ikw-trust-badge { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.95); border: 1px solid #C7DAF0; border-radius: 6px; padding: 10px 12px; }
+  .ikw-tb-icon { flex-shrink: 0; width: 22px; height: 22px; background: #2E7D32; color: #fff; border-radius: 50%; font-weight: 800; font-size: 13px; display: flex; align-items: center; justify-content: center; }
+  .ikw-tb-text { display: flex; flex-direction: column; line-height: 1.3; }
+  .ikw-tb-text strong { font-size: 13.5px; color: #0D47A1; font-weight: 800; }
+  .ikw-tb-text small { font-size: 11px; color: #555; margin-top: 2px; }
+
+  /* LINE CTA ボタン（hero CTA 内）*/
+  .ikw-btn-cta--line { background: #06C755 !important; color: #fff !important; }
+  .ikw-btn-cta--line:hover { background: #05B04C !important; color: #fff !important; }
+
+  /* hero サブ CTA（処方条件・料金）*/
+  .ikw-hero-cta-sub { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 12px; font-size: 13.5px; }
+  .ikw-hero-cta-sub a { color: #FFFFFF; text-decoration: underline; opacity: 0.85; }
+  .ikw-hero-cta-sub a:hover { opacity: 1; color: #fff; }
+
+  /* 担当医（信頼形成）*/
+  .ikw-hero-doctor { background: #fff; border: 1px solid #D9E3F0; border-left: 5px solid #0D47A1; border-radius: 6px; padding: 18px 22px; margin: 0 0 28px; display: flex; align-items: flex-start; gap: 18px; flex-wrap: wrap; }
+  .ikw-hd-label { background: #0D47A1; color: #fff; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 4px; letter-spacing: 0.08em; flex-shrink: 0; margin-top: 4px; }
+  .ikw-hd-body { flex: 1 1 280px; min-width: 0; }
+  .ikw-hd-name { font-size: 17px; font-weight: 800; color: #0D47A1; margin-bottom: 6px; }
+  .ikw-hd-name small { font-size: 13px; color: #595959; font-weight: 500; margin-left: 4px; }
+  .ikw-hd-creds { list-style: none; margin: 0 0 8px; padding: 0; }
+  .ikw-hd-creds li { font-size: 14px; line-height: 1.7; padding-left: 18px; position: relative; }
+  .ikw-hd-creds li::before { content: "▶"; position: absolute; left: 0; color: #2E75B6; font-size: 9px; top: 8px; }
+  .ikw-hd-note { font-size: 12.5px; color: #555; margin: 8px 0 0; line-height: 1.7; padding-top: 8px; border-top: 1px dashed #D9E3F0; }
+
+  @media (max-width: 600px) {
+    .ikw-trust-badges { grid-template-columns: 1fr; gap: 8px; }
+    .ikw-trust-badge { padding: 9px 11px; }
+    .ikw-tb-text strong { font-size: 13px; }
+    .ikw-hero-doctor { padding: 14px 16px; gap: 12px; }
+    .ikw-hd-name { font-size: 15px; }
+    .ikw-hd-creds li { font-size: 13px; }
+  }
+
   /* フローティングCTA（PC・スマホ両対応） */
-  .ikw-floating-cta { position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%); z-index: 9999; background: linear-gradient(135deg, #C00000 0%, #E53935 100%); color: #fff !important; text-decoration: none !important; padding: 14px 32px; border-radius: 999px; font-size: 15px; font-weight: 700; box-shadow: 0 8px 24px rgba(192,0,0,0.35); transition: transform .15s, box-shadow .15s; letter-spacing: 0.02em; }
-  .ikw-floating-cta:hover { color: #fff !important; transform: translateX(-50%) translateY(-2px); box-shadow: 0 10px 28px rgba(192,0,0,0.45); }
-  .ikw-floating-cta .ikw-fc-sub { display: block; font-size: 11px; font-weight: 500; opacity: 0.9; margin-top: 2px; letter-spacing: 0.04em; }
+  .ikw-floating-cta-wrap { position: fixed; bottom: 22px; left: 50%; transform: translateX(-50%); z-index: 9999; display: flex; gap: 10px; }
+  .ikw-floating-cta { background: linear-gradient(135deg, #C00000 0%, #E53935 100%); color: #fff !important; text-decoration: none !important; padding: 13px 24px; border-radius: 999px; font-size: 14.5px; font-weight: 700; box-shadow: 0 8px 24px rgba(192,0,0,0.35); transition: transform .15s, box-shadow .15s; letter-spacing: 0.02em; text-align: center; }
+  .ikw-floating-cta:hover { color: #fff !important; transform: translateY(-2px); box-shadow: 0 10px 28px rgba(192,0,0,0.45); }
+  .ikw-floating-cta .ikw-fc-sub { display: block; font-size: 10.5px; font-weight: 500; opacity: 0.92; margin-top: 2px; letter-spacing: 0.04em; }
+  .ikw-floating-cta--line { background: linear-gradient(135deg, #06C755 0%, #1ED373 100%); box-shadow: 0 8px 24px rgba(6,199,85,0.35); }
+  .ikw-floating-cta--line:hover { box-shadow: 0 10px 28px rgba(6,199,85,0.45); }
   .ikw-bottom-spacer { height: 100px; }
 
   @media (max-width: 767px) {
@@ -225,8 +265,10 @@
     .ikw-cta-banner h3 { font-size: 19px; }
     .ikw-hero-img { max-height: 200px; }
     .ikw-bio-grid { grid-template-columns: 1fr; }
-    .ikw-floating-cta { bottom: 12px; left: 12px; right: 12px; transform: none; padding: 13px 16px; text-align: center; font-size: 14.5px; }
+    .ikw-floating-cta-wrap { bottom: 12px; left: 12px; right: 12px; transform: none; gap: 8px; }
+    .ikw-floating-cta { flex: 1 1 50%; padding: 11px 8px; font-size: 13.5px; }
     .ikw-floating-cta:hover { transform: none; }
+    .ikw-floating-cta .ikw-fc-sub { font-size: 9.5px; }
     .ikw-bottom-spacer { height: 90px; }
   }
 </style>
@@ -242,12 +284,47 @@
     <span class="ikw-hero-tag">マンジャロ オンライン診療｜全国対応</span>
     <h1>内科専門医が、<br><em>薬だけに頼らない</em>医療痩身を。</h1>
     <p class="ikw-hero-sub">マンジャロ（チルゼパチド）処方／サブスクなし／毎回しっかり診察</p>
+
+    <!-- 信頼バッジ（差別化メッセージング）-->
+    <div class="ikw-trust-badges">
+      <div class="ikw-trust-badge">
+        <span class="ikw-tb-icon">✓</span>
+        <span class="ikw-tb-text"><strong>サブスク不要</strong><small>都度処方／自動継続課金なし</small></span>
+      </div>
+      <div class="ikw-trust-badge">
+        <span class="ikw-tb-icon">✓</span>
+        <span class="ikw-tb-text"><strong>前日まで無料キャンセル</strong><small>予約料1,000円は全額返金</small></span>
+      </div>
+      <div class="ikw-trust-badge">
+        <span class="ikw-tb-icon">✓</span>
+        <span class="ikw-tb-text"><strong>内科専門医が直接担当</strong><small>非対面・代行診療なし</small></span>
+      </div>
+    </div>
+
     <p class="ikw-hero-lead">「とりあえず処方」ではなく、生活スタイル・食事スタイルから一緒に組み立てる、エビデンスに基づいた肥満症治療。<br>
     薬の効果が出ている期間に、減薬後も体重を維持していける身体と習慣をつくります。</p>
+
     <div class="ikw-hero-cta">
       <a class="ikw-btn-cta" href="https://reserve.ikegawa-clinic.com/">📱 オンライン予約はこちら &rsaquo;</a>
-      <a class="ikw-btn-cta ikw-btn-cta--ghost" href="https://ikegawa-clinic.com/mounjaro/">処方条件を確認 &rsaquo;</a>
-      <a class="ikw-btn-cta ikw-btn-cta--ghost" href="https://ikegawa-clinic.com/price/#mounjaro">料金を確認 &rsaquo;</a>
+      <a class="ikw-btn-cta ikw-btn-cta--line" href="https://lin.ee/8LiQbwf" target="_blank" rel="noopener">💬 LINEで気軽に相談 &rsaquo;</a>
+    </div>
+    <div class="ikw-hero-cta-sub">
+      <a href="https://ikegawa-clinic.com/mounjaro/">処方条件を確認 &rsaquo;</a>
+      <a href="https://ikegawa-clinic.com/price/#mounjaro">料金を確認 &rsaquo;</a>
+    </div>
+  </div>
+
+  <!-- 担当医（信頼形成）-->
+  <div class="ikw-hero-doctor mj-up mj-up-d1" id="doctor-credentials">
+    <div class="ikw-hd-label">担当医</div>
+    <div class="ikw-hd-body">
+      <div class="ikw-hd-name">池川 眞之 <small>（いけがわ まさゆき）</small></div>
+      <ul class="ikw-hd-creds">
+        <li><strong>日本内科学会 内科専門医</strong></li>
+        <li>産業医科大学病院 脳神経内科 <strong>助教</strong></li>
+        <li>医療法人さくら会 池川内科・神経内科 役員（次期院長）</li>
+      </ul>
+      <p class="ikw-hd-note">処方判断・診察対応はすべて担当医が直接実施します。事務スタッフによる代行診療は一切ありません。</p>
     </div>
   </div>
 
@@ -504,10 +581,16 @@
 </div>
 
 <!-- 常時表示フローティングCTA（PC・スマホ両対応） -->
-<a class="ikw-floating-cta" href="https://reserve.ikegawa-clinic.com/">
-  📱 オンライン予約はこちら
-  <span class="ikw-fc-sub">24時間受付／全国対応</span>
-</a>
+<div class="ikw-floating-cta-wrap">
+  <a class="ikw-floating-cta" href="https://reserve.ikegawa-clinic.com/">
+    📱 予約する
+    <span class="ikw-fc-sub">24時間受付・全国対応</span>
+  </a>
+  <a class="ikw-floating-cta ikw-floating-cta--line" href="https://lin.ee/8LiQbwf" target="_blank" rel="noopener">
+    💬 LINEで相談
+    <span class="ikw-fc-sub">予約前の質問はこちら</span>
+  </a>
+</div>
 
 <!-- スクロール時のふわっと出現（IntersectionObserver、外部ライブラリ不要） -->
 <script>
