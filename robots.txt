@@ -1,0 +1,20 @@
+# mounjaro.ikegawa-clinic.com — マンジャロ オンライン診療LP
+# 検索・AIクローラーとも全面許可（本体 ikegawa-clinic.com/robots.txt と方針統一）
+
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
